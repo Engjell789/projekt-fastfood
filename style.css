@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    background-color: bisque;
+}
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0;
+}
+.nav .logo h1{
+    font-weight: 500;
+    font-family: sans-serif;
+    color: black;
+}
+.nav .logo b{
+    color: orangered;
+}
+.nav ul{
+    display: flex;
+    list-style: none;
+}
+.nav ul li{
+    margin-right: 50px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+
+/* butoni login*/
+input{
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+/*main text*/
+.text_main{
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    color: black;
+}
+.text_main h1{
+    font-size: 50px;
+    font-family: sans-serif;
+}
+.text_main h2{
+    font-size: 80px;
+    font-family: sans-serif;
+}
+.text_main b{
+    color: orangered;
+}
+.image_main img{
+    display: block;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 25%;
+}
