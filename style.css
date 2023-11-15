@@ -111,9 +111,19 @@ h2::first-letter{
     padding: 10px;
     border-radius: 15px;
     background-color: bisque;
+    
 }
 
 
 .menu{ 
     color: bisque;
+}
+
+.inputL{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.inputL2{
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
