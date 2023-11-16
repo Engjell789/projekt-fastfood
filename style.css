@@ -72,17 +72,19 @@ main{
     display: flex;
     justify-content: center;
     align-self: center;
-     border: black;
+     border: bisque;
    
 }
 .login-form{
     padding-top: 20px;
     width: 550px;
     height: 550px;
-    background-color: beige;
     text-align: center;
       border: solid 2px;
       border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
+      background-image: url('https://media.istockphoto.com/id/1274728428/vector/light-brown-or-beige-coloured-grunge-old-vector-backgrounds-with-an-all-over-pattern-of.jpg?s=612x612&w=0&k=20&c=irHJvcG8ct7NJeYVLrxa5LINUUJBNO5YIQc8pwlvOu8=')
+ 
 }
 
 h2{
