@@ -22,34 +22,70 @@
             </div>
         </div>
     </section>
-    <main>
-        <div class="login-form">
-          <div class="login-title">
-              <h2 >Sign Up</h2>
-          </div>
-          <div class="input"  > 
-         <input type="text" placeholder="First-name">
 
-          </div>
-          <div class="input"  > 
-            <input type="text" placeholder="Email">
-
-          </div>
-
-          <div class="input">
-             <input type="text" placeholder="Username">
-          </div>
-          <div class ="input">
-             <input type ="password" placeholder="Paswoord">
+    
+        <main>
+            <div class="login-form">
+                <div class="login-title">
+                    <h2>Sign Up</h2>
+                </div>
+                <div class="input">
+                    <input type="text" id="firstNameInput" placeholder="First-name">
+                </div>
+                <div class="input">
+                    <input type="text" id="emailInput" placeholder="Email">
+                </div>
+                <div class="input">
+                    <input type="text" id="usernameInput" placeholder="Username">
+                </div>
+                <div class="input">
+                    <input type="password" id="passwordInput" placeholder="Password">
+                </div>
+                <div class="input1">
+                    <input type="password" id="confirmPasswordInput" placeholder="Confirm password">
+                </div>
+                <button type="button" class="buton" onclick="validateSignUp()">Sign up</button>
             </div>
-            <div class ="input1">
-             <input type ="password" placeholder="Confim password">
-              </div>
-          <a href="log-in.html"><button type="button" class="buton">Sign up</button></a>
-  
-  
-  
-  
-        </div>
+        </main>
+    
+        <script>
+            function validateSignUp() {
+                let  firstNameInput = document.getElementById("firstNameInput").value;
+                let emailInput = document.getElementById("emailInput").value;
+                let usernameInput = document.getElementById("usernameInput").value;
+                let  passwordInput = document.getElementById("passwordInput").value;
+                let confirmPasswordInput = document.getElementById("confirmPasswordInput").value;
+    
+                 let permbajtaEpaswordit= /^.{8,16}$/;
+                let permbajtaEemailit = /\S+@\S+\.\S+/;
+    
+                if (firstNameInput.trim() === "" || usernameInput.trim() === "" || passwordInput.trim() === "" || confirmPasswordInput.trim() === "") {
+                    alert("Ju lutem plotësoni të gjitha fushat!");
+                } 
+                else if (!permbajtaEemailit.test(emailInput)) {
+                    alert("Adresa e emailit nuk është e vlefshme. Ju lutem vendosni një adresë emaili të saktë.");
+            
+                } 
+                else if (passwordInput !== confirmPasswordInput) {
+                    alert("Fjalëkalimet nuk përputhen. Ju lutem bëni një verifikim të saktë.");
+
+                } 
+                else if (!permbajtaEpaswordit.test(passwordInput)){
+                        alert("Fjalëkalimi duhet të jetë mes 8 dhe 16 karaktere.");
+                    }
+                
+                
+                else {
+                    alert("Regjistrimi u krye me sukses!");
+                    
+                }
+            }
+        </script>
+    
+   
+    
  
-  </main>
+    
+  
+  
+ 

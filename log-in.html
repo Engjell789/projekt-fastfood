@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fast food project</title>
     <link rel="stylesheet" href="style.css">
+  
+
 </head>
 <body>
     <section class="menu">
@@ -23,26 +25,56 @@
             </div>
         </div>
     </section>
-    <main>
-        <div class="login-form">
-          <div class="login-title">
-              <h2>Log in</h2>
-          </div>
-          <div class="inputL1">
-              <input type="text" placeholder="Email or Username">
-          </div>
-          <div class ="inputL2">
-              <input type ="password" placeholder="*********">
+       <main>
+            <div class="login-form">
+                <div class="login-title">
+                    <h2>Log in</h2>
+                </div>
+    
+                <div class="inputL1">
+                    <input type="text" id="emailInput" placeholder="Your Email">
+                </div>
+                <div class="inputL2">
+                    <input type="password" id="passwordInput" placeholder="*********">
+                </div>
+    
+                <div class="butonn">
+                   <button type="button" class="buton" id="loginButon1" onclick="validateLogin()">Log in</button>
+                </div>
+    
+                <div class="t">
+                    <span>I don't have an account? <a href="sign-up.html">Sign up</a></span>
+                </div>
             </div>
-  <div class="butonn">
-       <a href="home.html"> <button type="button" class="buton">Log in </button></a>
-      </div>
-             <div class="t">
-                  <span>I don't have an account ?   <a href="sign-up.html">Sign up</a></span>
-  
-             </div>
-  
-  
-  
-        </div>
-  </main>
+        </main>
+         <script>
+            function validateLogin() {
+            
+                let  emailInput = document.getElementById("emailInput").value;
+                let passwordInput = document.getElementById("passwordInput").value;
+    
+                let permbajtaEemailit=  /\S+@\S+\.\S+/;
+                let permbajtaEpaswordit = /^.{8,16}$/;
+                if (emailInput.trim() === "" || passwordInput.trim() === "") {
+                    alert("Ju lutem plotësoni të gjitha fushat!");
+                }
+                    else if (!permbajtaEemailit.test(emailInput)){
+                        alert("Adresa e emailit nuk është e vlefshme. Ju lutem vendosni një adresë emaili të saktë.");
+                    }
+                    else if (!permbajtaEpaswordit.test(passwordInput)){
+                        alert("Fjalëkalimi duhet të jetë mes 8 dhe 16 karaktere.");
+                    }
+                 else  {
+                    
+                    alert("Ju keni hyrë me sukses!");
+                    
+                }
+            }
+        </script>
+    
+ 
+    
+
+
+    
+    
