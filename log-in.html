@@ -56,17 +56,17 @@
                 let permbajtaEemailit=  /\S+@\S+\.\S+/;
                 let permbajtaEpaswordit = /^.{8,16}$/;
                 if (emailInput.trim() === "" || passwordInput.trim() === "") {
-                    alert("Ju lutem plotësoni të gjitha fushat!");
+                    alert("Please fill in all fields!");
                 }
                     else if (!permbajtaEemailit.test(emailInput)){
-                        alert("Adresa e emailit nuk është e vlefshme. Ju lutem vendosni një adresë emaili të saktë.");
+                        alert("The email address is not valid. Please enter a valid email address.");
                     }
                     else if (!permbajtaEpaswordit.test(passwordInput)){
-                        alert("Fjalëkalimi duhet të jetë mes 8 dhe 16 karaktere.");
+                        alert("Password must be between 8 and 16 characters.");
                     }
                  else  {
                     
-                    alert("Ju keni hyrë me sukses!");
+                    alert("You have successfully entered!");
                     
                 }
             }

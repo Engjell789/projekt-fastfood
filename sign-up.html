@@ -60,23 +60,23 @@
                 let permbajtaEemailit = /\S+@\S+\.\S+/;
     
                 if (firstNameInput.trim() === "" || usernameInput.trim() === "" || passwordInput.trim() === "" || confirmPasswordInput.trim() === "") {
-                    alert("Ju lutem plotësoni të gjitha fushat!");
+                    alert("Please fill in all fields!");
                 } 
                 else if (!permbajtaEemailit.test(emailInput)) {
-                    alert("Adresa e emailit nuk është e vlefshme. Ju lutem vendosni një adresë emaili të saktë.");
+                    alert("The email address is not valid. Please enter a valid email address.");
             
                 } 
                 else if (passwordInput !== confirmPasswordInput) {
-                    alert("Fjalëkalimet nuk përputhen. Ju lutem bëni një verifikim të saktë.");
+                    alert("Passwords do not match. Please do a proper verification.");
 
                 } 
                 else if (!permbajtaEpaswordit.test(passwordInput)){
-                        alert("Fjalëkalimi duhet të jetë mes 8 dhe 16 karaktere.");
+                        alert("Password must be between 8 and 16 characters.");
                     }
                 
                 
                 else {
-                    alert("Regjistrimi u krye me sukses!");
+                    alert("Registration completed successfully!");
                     
                 }
             }
