@@ -1,3 +1,28 @@
+<?php 
+session_start(); 
+include("db.php"); 
+if($_SERVER['REQUEST_METHOD'] == "POST") 
+{ 
+    $firstname = $_POST['first name']; 
+    $gmail = $_POST['email']; 
+    $user_name = $_POST['username']; 
+    $password = $_POST['password']; 
+    
+    if(!empty($gmail) && !empty($password) &&  !is_numeric($gmail))
+    {
+         $query = "insert into form(first name, email, username, password) values ('$firstname', '$gmail', '$user_name', '$password')"; 
+
+         mysqli_query($con, $query); 
+
+         echo"<script type='text/javascript'> alert('Successfully Register')</script>"; 
+        } 
+         else
+         { 
+            echo"<script type='text/javascript'> alert('Please enter some valid information')</script>"; 
+         } 
+        
+    } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
