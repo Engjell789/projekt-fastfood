@@ -1,15 +1,15 @@
 <?php 
-include('../functions.php');
+include('functions.php');
 
 if (!isAdmin()) {
         $_SESSION['msg'] = "You must log in first";
-        header('location: ../login.php');
+        header('location: login.php');
 }
 
 if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['user']);
-        header("location: ../login.php");
+        header("location: login.php");
 }
 function isAdmin()
 {
@@ -24,7 +24,7 @@ function isAdmin()
 <html>
 <head>
         <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <style>
         .header {
                 background: #003366;

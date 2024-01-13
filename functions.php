@@ -104,6 +104,21 @@ function isLoggedIn()
 if (isset($_POST['login_btn'])) {
     login();
 }
+function isAdmin()
+{
+        if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
+                return true;
+        }else{
+                return false;
+        }
+}
+// log user out if logout button clicked
+if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['user']);
+        header("location: login.php");
+}
+
 
 // LOGIN USER
 function login(){
@@ -135,7 +150,7 @@ function login(){
 
                             $_SESSION['user'] = $logged_in_user;
                             $_SESSION['success']  = "You are now logged in";
-                            header('location: admin/home.php');               
+                            header('location: home.php');               
                     }else{
                             $_SESSION['user'] = $logged_in_user;
                             $_SESSION['success']  = "You are now logged in";
