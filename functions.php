@@ -162,3 +162,21 @@ function login(){
             }
     }
 }
+
+    /*contactus*/
+     function insertContact($name,  $phone, $message) {
+      
+        $name = $this->conn->real_escape_string($name);
+        $phone = $this->conn->real_escape_string($phone);
+        $message = $this->conn->real_escape_string($message);
+
+        $sql = "INSERT INTO contact (name,  phone, message) VALUES ('$name',  '$phone', '$message')";
+
+        if ($this->conn->query($sql) === TRUE) {
+            echo "Record inserted successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $this->conn->error;
+        }
+    }
+
+
