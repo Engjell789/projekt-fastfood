@@ -16,9 +16,9 @@
             <ul>
                 <li><a href="home.html">HOME</a></li>
                 <li><a href="aboutus.html">ABOUT US</a></li>
-                <li><a href="burger.html">BURGER</a></li>
-                <li><a href="pizza.html">PIZZA</a></li>
-                <li><a href="contactus.html">CONTACT US</a></li>
+                <li><a href="burger.php">BURGER</a></li>
+                <li><a href="pizza.php">PIZZA</a></li>
+                <li><a href="contactus.php">CONTACT US</a></li>
             </ul>
             <div>
                 <a href="login.php"><input class="login" type="submit" value="LOG IN" name="login"> </a>

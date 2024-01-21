@@ -180,3 +180,22 @@ function login(){
     }
 
 
+
+
+
+    function insertOrder($itemName, $price) {
+        $conn = connectToDatabase();
+    
+        $itemName = $conn->real_escape_string($itemName);
+        $price = $conn->real_escape_string($price);
+    
+        $sql = "INSERT INTO porosite (item_name, price) VALUES ('$itemName', $price)";
+    
+        if ($conn->query($sql) === TRUE) {
+            echo "Order placed successfully.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    
+        $conn->close();
+    }
