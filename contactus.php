@@ -1,5 +1,18 @@
 
-<?php include('functions.php') ?>
+<?php if(isset($_POST['submit'])){
+include_once 'c.php';
+$obj=new Contact();
+$res=$obj->contact_us($_POST);
+if ($res==true){
+    echo "<script> alert('succesful') </script>";
+}else{
+    echo "<script> alert('errorr')</script>";
+}
+
+
+
+
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,29 +40,45 @@
     </section>
 
     <div class="container">
-        <form onsubmit = "sendEmail(); reset(); return false;">
+    <form method="post" action="contactus.php"  onsubmit="return contactV()">
+      
             <h3>GET IN TOUCH</h3>
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="text" id="phone" placeholder="Phone no." required>
-            <textarea id="message" rows="4" placeholder="How can we help you"></textarea>
-            <button type="submit">Send</button>
+            <input type="text" id="name" name="name" placeholder="Your Name" >
+            <input type="email" id="email" name="email" placeholder="Email" >
+            <input type="text" id="phone" name="phone" placeholder="Phone no." >
+            <textarea id="message" rows="4" name="message"  placeholder="How can we help you"></textarea>
+            <button type="submit" name="submit">Send</button>
         </form>
     </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-        function sendEmail(){
-            Email.send({
-    Host : "smtp.gmail.com",
-    Username : "username",
-    Password : "password",
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
+        function contactV() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var phoneRegex = /^\+\d+$/;
+
+    
+
+            if (name === "" || email === "" || phone === "" || message === "") {
+                alert("plotsoj te gjitha fushat");
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("vendos nje email valid");
+                return false;
+            }
+        
+            if (!phoneRegex.test(phone)) {
+                alert("vendos nje numer");
+                return false;
+            }
+      
+
+            return true;
         }
     </script>
 </body>
