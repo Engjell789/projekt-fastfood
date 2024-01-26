@@ -1,32 +1,67 @@
-<?php include('functions.php') ?>
+<?php
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "contact";
+
+
+session_start();
+
+$data = mysqli_connect($host, $user, $password, $db);
+if ($data === false) {
+    die("Deshtoi lidhja me databazën");
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"] ;
+
+
+
+    $sql = "select * from users where username='".$username."'AND password='".$password."'";
+    $result = mysqli_query($data, $sql);
+
+   $row=mysqli_fetch_array($result);
+
+   if ($row = mysqli_fetch_array($result)) {
+    if ($row["usertype"] == "user") {
+        $_SESSION["username"] = $username;
+        header("location:userhome.php");
+    } elseif ($row["usertype"] == "admin") {
+        $_SESSION["username"] = $username;
+        header("location:adminhome.php");
+    } else {
+        echo "Username or password incorrect";
+    }
+} else {
+    echo "Username or password incorrect";
+}
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Registration system PHP and MySQL</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Login system PHP and MySQL</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-        <div class="header">
-                <h2>Login</h2>
+    <div class="header">
+        <h2>Login</h2>
+    </div>
+    <form method="post" action="login.php">
+        <div class="input-group">
+            <label>Username</label>
+            <input type="text" name="username">
         </div>
-        <form method="post" action="login.php">
-
-                <?php echo display_error(); ?>
-
-                <div class="input-group">
-                        <label>Username</label>
-                        <input type="text" name="username" >
-                </div>
-                <div class="input-group">
-                        <label>Password</label>
-                        <input type="password" name="password">
-                </div>
-                <div class="input-group">
-                        <button type="submit" class="btn" name="login_btn">Login</button>
-                </div>
-                <p>
-                        Not yet a member? <a href="register.php">Sign up</a>
-                </p>
-        </form>
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password">
+        </div>
+        <div class="input-group">
+            <button type="submit" class="btn" name="login_btn">Login</button>
+        </div>
+        <p>Not yet a member? <a href="register.php">Sign up</a></p>
+    </form>
 </body>
 </html>

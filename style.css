@@ -1,6 +1,10 @@
 * { 
     margin: 0px; padding: 0px; 
 }
+
+#log-out{
+    color:red;
+}
 body {
         font-size: 120%;
         background: #F8F8FF;
@@ -135,8 +139,10 @@ input{
     padding: 3px 13px;
     cursor: pointer;
     font-weight: 500;
+  
    
 }
+
 
 
 /*main text*/
@@ -412,6 +418,7 @@ input{
     padding: 3px 13px;
     cursor: pointer;
     font-weight: 500;
+  
    
 }
 
@@ -688,6 +695,13 @@ input{
     cursor: pointer;
     font-weight: 500;
 }
+.log-out{
+        padding: 10px 20px;
+        cursor: pointer;
+        font-weight: 500;
+        color :red;
+    
+}
 
 
 /*main text*/
@@ -955,6 +969,7 @@ input{
     padding: 10px 20px;
     cursor: pointer;
     font-weight: 500;
+ 
 }
 
 

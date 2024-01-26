@@ -1,3 +1,16 @@
+<?php
+   session_start();
+
+if(!isset($_SESSION["username"]))
+{
+    header("location:login.php");
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,22 +28,23 @@
         <div class="nav">
             <div class="logo"><h1><b>BLITZ</b>FOOD</h1></div>
             <ul>
-                <li><a href="home.html">HOME</a></li>
+                <li><a href="adminhome.php">HOME</a></li>
                 <li><a href="aboutus.html">ABOUT US</a></li>
                 <li><a href="burger.php">BURGER</a></li>
                 <li><a href="pizza.php">PIZZA</a></li>
-                <li><a href="contactus.php">CONTACT US</a></li>
+                <li><a href="admincontactus.php">CONTACT US</a></li>
             </ul>
             <div>
                 <a href="login.php"><input class="login" type="submit" value="LOG IN" name="login"> </a>
             </div>
 
-            
+            <a href="logout.php"><input class="login"  type="submit" value="LOG OUT" name="logout"></a>
+            <a href="logout.php"><input class="login"  type="submit" value="LOG OUT" name="logout"></a>
         </div>
     </section>
 
     <div class="text_main">
-        <h1>WELCOME TO</h1>
+        <h1>WELCOME TO</h1><?php echo $_SESSION["username"] ?>
         <h2><b>BLITZ</b>FOOD</h2>
     </div>
 
@@ -48,7 +62,7 @@
           
           </div>
     </div>
-
+  
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
 		<script>
