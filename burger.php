@@ -1,4 +1,10 @@
+<?php
 
+    require_once 'connection.php';
+
+    $sql = "SELECT * FROM product";
+    $all_product = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +24,7 @@
 
 </head>
 <body>
+    
     <section class="menu">
         <div class="nav">
             <div class="logo"><h1><b>BLITZ</b>FOOD</h1></div>
@@ -32,8 +39,13 @@
             <a href="login.php"><input class="login" type="submit" value="LOG IN" name="login"> </a>
             </div>
         </div>
+    
     </section>
 
+    <main>
+    <?php
+        while($row = mysqli_fetch_assoc($all_product)){
+    ?>
     <div class="food_box"> 
         <div class="food_card">
 
@@ -42,8 +54,8 @@
             </div>
 
         <div class="food_text">
-            <h4>PLAIN BURGER</h4>
-            <h5>1.49$</h5>
+            <h4><?php echo $row["product_name"]; ?></h4>
+            <h5><?php echo $row["price"]; ?></h5>
           <a href="#" onclick="burger('PLAIN BURGER')" class="food_btn">ORDER</a>
         </div>
         </div>
@@ -56,8 +68,8 @@
             </div>
         
             <div class="food_text">
-                <h4>CHEESEBURGER</h4>
-                <h5>1.99$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
                 <a href="#" onclick="burger('CHEESE BURGER ')" class="food_btn">ORDER</a>
                     </a>
 
@@ -72,8 +84,8 @@
             </div>
         
             <div class="food_text">
-                <h4>CHICKEN BURGER</h4>
-                <h5>2.49$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
                 <a href="#" onclick="burger('CHICKEN BURGER ')" class="food_btn">ORDER</a>
             </div>
         </div>
@@ -87,8 +99,8 @@
             </div>
         
             <div class="food_text">
-                <h4>DOUBLE CHEESEBURGER</h4>
-                <h5>2.99$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
                 <a href="#" onclick="burger('DOUBLE CHEESEBURGER ')" class="food_btn">ORDER</a>           
              </div>
         </div>
@@ -101,10 +113,15 @@
             </div>
         
             <div class="food_text">
-                <h4>FRIES</h4>
-                <h5>0.99$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
                 <a href="#" onclick="burger('FRIES  ')" class="food_btn">ORDER</a>        
             </div>
         </div>
     </div>
+    <?php
+
+        }
+        ?>
+    </main>
 </body>

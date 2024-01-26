@@ -1,3 +1,10 @@
+<?php
+
+    require_once 'connection.php';
+
+    $sql = "SELECT * FROM product";
+    $all_product = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +35,10 @@
         </div>
     </section>
 
+    <main>
+    <?php
+        while($row = mysqli_fetch_assoc($all_product)){
+    ?>
     <div class="food_box"> 
         <div class="food_card">
 
@@ -36,8 +47,8 @@
             </div>
 
         <div class="food_text">
-            <h4>MARGHERITA PIZZA</h4>
-            <h5>3.49$</h5>
+            <h4><?php echo $row["product_name"]; ?></h4>
+            <h5><?php echo $row["price"]; ?></h5>
         
             <a href="#" onclick="pizza('MARGHERITA PIZZA')" class="food_btn">ORDER</a>
         </div>
@@ -51,8 +62,8 @@
             </div>
         
             <div class="food_text">
-                <h4>PEPPERONI PIZZA</h4>
-                <h5>3.99$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
           
                 <a href="#" onclick="pizza('PEPPERONI PIZZA')" class="food_btn">ORDER</a>
             </div>
@@ -66,8 +77,8 @@
             </div>
         
             <div class="food_text">
-                <h4>TUNA PIZZA</h4>
-                <h5>3.99$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
           
                 <a href="#" onclick="pizza('TUNA PIZZA')" class="food_btn">ORDER</a>
             </div>
@@ -82,8 +93,8 @@
             </div>
         
             <div class="food_text">
-                <h4>VEGAN PIZZA</h4>
-                <h5>2.99$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
           
                 <a href="#" onclick="pizza('VEGAN PIZZA')" class="food_btn">ORDER</a>
             </div>
@@ -97,8 +108,8 @@
             </div>
         
             <div class="food_text">
-                <h4>BBQ CHICKEN PIZZA</h4>
-                <h5>4.49$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
        
                 <a href="#" onclick="pizza('BBQ  CHICKEN PIZZA')" class="food_btn">ORDER</a>
             </div>
@@ -111,10 +122,15 @@
             </div>
         
             <div class="food_text">
-                <h4>MIXED PIZZA</h4>
-                <h5>4.99$</h5>
+                <h4><?php echo $row["product_name"]; ?></h4>
+                <h5><?php echo $row["price"]; ?></h5>
                 <a href="#" onclick="pizza('MIXED  CHICKEN PIZZA')" class="food_btn">ORDER</a>
             </div>
         </div>
     </div>
+    <?php
+
+        }
+        ?>
+    </main>
 </body>
