@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Fjalëkalimet nuk përputhen.";
     } else {
         // Hash the password before saving it to the database
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
 
         $sql = "INSERT INTO users (username, password, email) 
-                VALUES ('$username', '$hashed_password', '$email')";
+                VALUES ('$username', '$password', '$email')";
 
         $result = mysqli_query($data, $sql);
 

@@ -33,19 +33,20 @@ if(!isset($_SESSION["username"]))
                 <li><a href="burger.php">BURGER</a></li>
                 <li><a href="pizza.php">PIZZA</a></li>
                 <li><a href="admincontactus.php">CONTACT US</a></li>
+                <li><a href="dashboard.php">DASHBOARD</a></li>
             </ul>
             <div>
-                <a href="login.php"><input class="login" type="submit" value="LOG IN" name="login"> </a>
+            <a href="logout.php"><input class="login"  type="submit" value="LOG OUT" name="logout"></a>
             </div>
 
-            <a href="logout.php"><input class="login"  type="submit" value="LOG OUT" name="logout"></a>
-            <a href="logout.php"><input class="login"  type="submit" value="LOG OUT" name="logout"></a>
+      
         </div>
     </section>
 
     <div class="text_main">
-        <h1>WELCOME TO</h1><?php echo $_SESSION["username"] ?>
+        <h1>WELCOME TO</h1>
         <h2><b>BLITZ</b>FOOD</h2>
+        <?php echo $_SESSION["username"] ?>
     </div>
 
     <div class="container">

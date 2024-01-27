@@ -13,7 +13,7 @@ if ($data === false) {
 }
 
 
-$sql="SELECT * FROM users ";
+$sql="SELECT * FROM contact_us ";
 $result = mysqli_query($data, $sql);
 
 
@@ -26,7 +26,6 @@ $result = mysqli_query($data, $sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Only Here</title>
-    <link rel="stylesheet" href="style.css">
   
     <style>
 body {
@@ -114,7 +113,7 @@ tr:nth-child(even) {
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="a">PERDORUESIT</h2>
+                        <h2 class="a">Mesazhet nga ContactUs</h2>
                     </div>
                     <div class="card-body">
                         <table class="table tb tx">
@@ -122,8 +121,8 @@ tr:nth-child(even) {
     <td>Id</td>
     <td>Username</td>
     <td>Email</td>
-    <td>UserType</td>
-    
+    <td>Phone</td>
+    <td>message</td>
     <td>Delete</td>
 </tr>
 <?php
@@ -131,13 +130,14 @@ while ($row = mysqli_fetch_assoc($result)) {
     ?>
     <tr>
         <td><?php echo $row['id'] ?></td>
-        <td><?php echo $row['username'] ?></td>
+        <td><?php echo $row['name'] ?></td>
         <td><?php echo $row['email'] ?></td>
-        <td><?php echo $row['usertype'] ?></td>
+        <td><?php echo $row['phone'] ?></td>
+        <td><?php echo $row['message'] ?></td>
      
         <td>
             <button class="l">
-            <a href="delete.php?id=<?php echo $row['id']; ?>" class="text-light">Delete</a>
+            <a href="deleteContactUs.php?id=<?php echo $row['id']; ?>" class="text-light">Delete</a>
             </button>
         </td>
     </tr>

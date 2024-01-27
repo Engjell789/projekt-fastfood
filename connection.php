@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "";
+$username = "root";
 $password = "";
-$db_name = "addtocart";
+$db_name = "contact";
 
 $conn = new mysqli($servername,$username,$password,$db_name);
 ?>
