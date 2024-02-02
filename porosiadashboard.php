@@ -13,8 +13,7 @@ if ($data === false) {
 }
 
 
-
-$sql="SELECT * FROM contact_us ";
+$sql="SELECT * FROM porosia ";
 $result = mysqli_query($data, $sql);
 
 
@@ -28,7 +27,6 @@ $result = mysqli_query($data, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Only Here</title>
     <link rel="stylesheet" href="style.css">
-  
     <style>
 #page-wrap {
   width: 800px;
@@ -88,7 +86,6 @@ th, td {
 .a{
   font-size:30px;
 }
-
 </style>
 <section class="menu">
         <div class="nav">
@@ -103,6 +100,7 @@ th, td {
               
                 
             </ul>
+            <a href="adminporosia.php"><input class="login" type="submit" value="ORDER" name="login"> </a>
 </div>
 </body>
 </head>
@@ -112,7 +110,7 @@ th, td {
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="a">Mesazhet nga ContactUs</h2>
+                        <h2 class="a">POROSITE E BERA</h2>
                     </div>
                     <div class="card-body">
                         <table class="table tb tx">
@@ -121,7 +119,6 @@ th, td {
     <td>Username</td>
     <td>Email</td>
     <td>Phone</td>
-    <td>message</td>
     <td>Delete</td>
 </tr>
 <?php
@@ -130,13 +127,13 @@ while ($row = mysqli_fetch_assoc($result)) {
     <tr class="j">
         <td><?php echo $row['id'] ?></td>
         <td><?php echo $row['name'] ?></td>
-        <td><?php echo $row['email'] ?></td>
         <td><?php echo $row['phone'] ?></td>
-        <td><?php echo $row['message'] ?></td>
+        <td><?php echo $row['porosia'] ?></td>
+  
      
         <td>
             <button class="l">
-            <a href="deleteContactUs.php?id=<?php echo $row['id']; ?>" class="text-light">Delete</a>
+            <a href="deletePorosia.php?id=<?php echo $row['id']; ?>" class="text-light">Delete</a>
             </button>
         </td>
     </tr>

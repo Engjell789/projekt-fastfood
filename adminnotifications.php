@@ -1,23 +1,48 @@
+<?php   
 
-<?php 
+class Contact {
+    private $host="localhost";
+    private $user="root";
+    private $pass="";
+    private $db="contact";
+    public $mysqli;
+
+ 
+
+    public function __construct(){
+        return $this->mysqli = new mysqli($this->host,$this->user,$this->pass,$this->db);
+    }
+
+
+
+    public function news($data) {
+        $name=$data['name'];
+        $message=$data['message'];
+        $q="insert into news set name='$name',message='$message'";
+        return $this->mysqli->query($q);
+
+    }
+
+
+}
+
 
 if(isset($_POST['submit'])){
-include_once 'c.php';
-$obj=new Contact();
-$res=$obj->contact_us($_POST);
-if ($res==true){
-    echo "<script> alert('succesful') </script>";
-}else{
-    echo "<script> alert('errorr')</script>";
-}
 
-if(!isset($_SESSION["username"]))
-{
-    header("location:login.php");
-}
+    $obj=new Contact();
+    $res=$obj->news($_POST);
+    if ($res==true){
+        echo "<script> alert('succesful') </script>";
+    }else{
+        echo "<script> alert('errorr')</script>";
+    }
+    
+    
+    
+    
+    }
+?>
 
-
-} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,42 +73,29 @@ if(!isset($_SESSION["username"]))
     </section>
 
     <div class="container">
-    <form method="post" action="admincontactus.php"  onsubmit="return contactV()">
+    <form method="post" action="adminnotifications.php"  onsubmit="return contactV()">
       
-            <h3>GET IN TOUCH</h3>
-            <input type="text" id="name" name="name" placeholder="Your Name" >
-            <input type="email" id="email" name="email" placeholder="Email" >
-            <input type="text" id="phone" name="phone" placeholder="Phone no." >
-            <textarea id="message" rows="4" name="message"  placeholder="How can we help you"></textarea>
+            <h3>SEND NOTIFICATIONS</h3>
+            <input type="text" id="name" name="name" placeholder="BLITZFASTFOOD" >
+            <textarea id="message" rows="4" name="message"  placeholder="NOTIFICATIONS"></textarea>
             <button type="submit" name="submit">Send</button>
         </form>
     </div>
     <script>
         function contactV() {
             var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var phone = document.getElementById('phone').value;
             var message = document.getElementById('message').value;
 
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            var phoneRegex = /^\+\d+$/;
+       
 
     
 
-            if (name === "" || email === "" || phone === "" || message === "") {
+            if (name === "" || | message === "") {
                 alert("plotsoj te gjitha fushat");
                 return false;
             }
 
-            if (!emailRegex.test(email)) {
-                alert("vendos nje email valid");
-                return false;
-            }
-        
-            if (!phoneRegex.test(phone)) {
-                alert("vendos nje numer");
-                return false;
-            }
+       
       
 
             return true;

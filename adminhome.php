@@ -22,6 +22,7 @@ if(!isset($_SESSION["username"]))
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 />
+
 </head>
 <body>
     <section class="menu">
@@ -29,11 +30,12 @@ if(!isset($_SESSION["username"]))
             <div class="logo"><h1><b>BLITZ</b>FOOD</h1></div>
             <ul>
                 <li><a href="adminhome.php">HOME</a></li>
-                <li><a href="aboutus.html">ABOUT US</a></li>
-                <li><a href="burger.php">BURGER</a></li>
-                <li><a href="pizza.php">PIZZA</a></li>
+                <li><a href="adminaboutus.php">ABOUT US</a></li>
+                <li><a href="adminburger.php">BURGER</a></li>
+                <li><a href="adminpizza.php">PIZZA</a></li>
                 <li><a href="admincontactus.php">CONTACT US</a></li>
-                <li><a href="dashboard.php">DASHBOARD</a></li>
+                <li><a href="adminnotifications.php">NOTIFICATIONS</a></li>
+              
             </ul>
             <div>
             <a href="logout.php"><input class="login"  type="submit" value="LOG OUT" name="logout"></a>
@@ -46,7 +48,9 @@ if(!isset($_SESSION["username"]))
     <div class="text_main">
         <h1>WELCOME TO</h1>
         <h2><b>BLITZ</b>FOOD</h2>
-        <?php echo $_SESSION["username"] ?>
+     
+        <a href="admin.php"><input class="login"  type="submit" value="USERS/ADMIN" name="USERS/ADMIN"></a>
+      
     </div>
 
     <div class="container">

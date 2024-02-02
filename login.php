@@ -1,62 +1,81 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "contact";
+class Database {
+    private $host = "localhost";
+    private $user = "root";
+    private $password = "";
+    private $db = "contact";
+    private $connection;
+
+    public function __construct() {
+        $this->connection = mysqli_connect($this->host, $this->user, $this->password, $this->db);
+
+        if ($this->connection === false) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+    }
+
+    public function query($sql) {
+        return mysqli_query($this->connection, $sql);
+    }
+
+    public function escapeString($string) {
+        return mysqli_real_escape_string($this->connection, trim($string));
+    }
+
+    public function close() {
+        mysqli_close($this->connection);
+    }
+}
+
+class Auth {
+    private $db;
+
+    public function __construct($database) {
+        $this->db = $database;
+    }
+
+    public function loginUser($username, $password) {
+        $username = $this->db->escapeString($username);
+        $password = $this->db->escapeString($password);
+
+        if (empty($username) || empty($password)) {
+            echo '<script>alert("Ju lutemi, plotësoni të gjitha fushat e regjistrimit.");</script>';
+        } else {
+            $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+            $result = $this->db->query($sql);
+
+            if ($result) {
+                if (mysqli_num_rows($result) == 1) {
+                    $row = mysqli_fetch_assoc($result);
+
+                    if ($row["password"] === $password) {
+                        if ($row["usertype"] == "user") {
+                            $_SESSION["username"] = $username;
+                            header("location:userhome.php");
+                        } else if ($row["usertype"] == "admin") {
+                            $_SESSION["username"] = $username;
+                            header("location:adminhome.php");
+                        }
+                    }
+                } else {
+                    echo '<script>alert("Username or password incorrect");</script>';
+                }
+            }
+        }
+    }
+}
 
 session_start();
-
-$data = mysqli_connect($host, $user, $password, $db);
-
-// Check connection
-if ($data === false) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+$database = new Database();
+$auth = new Auth($database);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = mysqli_real_escape_string($data, trim($_POST["username"]));
-    $password = mysqli_real_escape_string($data, trim($_POST["password"]));
-
-    if (empty($username) || empty($password) ) {
-        echo '<script>alert("Ju lutemi, plotësoni të gjitha fushat e regjistrimit.");</script>';
-    } 
-     else {
-
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-  
-
-    $result = mysqli_query($data, $sql);
-
-
-    if ($result) {
-        if (mysqli_num_rows($result) == 1) {
-            $row = mysqli_fetch_assoc($result);
-
-          
-
-            // Check passwords directly
-            if ($row["password"] === $password) {
-                // Use strict comparison === to check both value and type
-                if ($row["usertype"] == "user") {
-                    $_SESSION["username"] = $username;
-                    header("location:userhome.php");
-                  
-                } else if ($row["usertype"] == "admin") {
-                    $_SESSION["username"] = $username;
-                    header("location:adminhome.php");
-                  
-                } 
-            } 
-        } else {
-            echo '<script>alert("Username or password incorrect");</script>';
-        }
-    } 
-    } 
+    $auth->loginUser($_POST["username"], $_POST["password"]);
 }
 
-    mysqli_close($data);
-
+$database->close();
 ?>
+
 
 <!DOCTYPE html>
 <html>

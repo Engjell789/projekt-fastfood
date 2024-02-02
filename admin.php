@@ -29,23 +29,11 @@ $result = mysqli_query($data, $sql);
     <link rel="stylesheet" href="style.css">
   
     <style>
-body {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
-}
+
 
 #page-wrap {
   width: 800px;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-  text-align: left;
+
 }
 
 h2 {
@@ -54,23 +42,20 @@ h2 {
 }
 
 .table {
-  width: 100%;
+
   border-collapse: collapse;
 }
 
 th, td {
   padding: 10px;
-  border: 1px solid #ddd;
+
+  color: black;
+  border:solid 2px black;
 }
 
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
+
+
 
 .l {
   background-color: #d9534f;
@@ -84,37 +69,64 @@ tr:nth-child(even) {
   margin: 4px 2px;
   cursor: pointer;
 }
-
-.l:hover {
-  background-color: #b32d29;
+.v {
+  background-color: green;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
+.v a{
+color:white;
+}
+
 
 .l a {
   color: #fff;
 }
 
+.b{
+  background-color:#4CAF50;
+  
+
+}
+.j{
+  background-color:white;
+}
+.a{
+  font-size:30px;
+}
 </style>
 <section class="menu">
         <div class="nav">
             <div class="logo"><h1><b>BLITZ</b>FOOD</h1></div>
             <ul>
                 <li><a href="adminhome.php">HOME</a></li>
-                <li><a href="aboutus.html">ABOUT US</a></li>
-                <li><a href="burger.php">BURGER</a></li>
-                <li><a href="pizza.php">PIZZA</a></li>
+                <li><a href="adminaboutus.php">ABOUT US</a></li>
+                <li><a href="adminburger.php">BURGER</a></li>
+                <li><a href="adminpizza.php">PIZZA</a></li>
                 <li><a href="admincontactus.php">CONTACT US</a></li>
-                <li><a href="dashboard.php">DASHBOARD</a></li>
+                <li><a href="adminnotifications.php">NOTIFICATIONS</a></li>
+             
+              
             </ul>
-           
+            <a href="adduser.php"><input class="login" type="submit" value="ADD USER" name="login"> </a>
+</div>
 </body>
 </head>
+
 <body class="bg-dark">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="a">PERDORUESIT</h2>
+                        <h2 class="a">User/Admin</h2>
                     </div>
                     <div class="card-body">
                         <table class="table tb tx">
@@ -123,13 +135,14 @@ tr:nth-child(even) {
     <td>Username</td>
     <td>Email</td>
     <td>UserType</td>
-    
     <td>Delete</td>
+    <td>Update</td>
+  
 </tr>
 <?php
 while ($row = mysqli_fetch_assoc($result)) {
     ?>
-    <tr>
+    <tr class="j">
         <td><?php echo $row['id'] ?></td>
         <td><?php echo $row['username'] ?></td>
         <td><?php echo $row['email'] ?></td>
@@ -140,6 +153,12 @@ while ($row = mysqli_fetch_assoc($result)) {
             <a href="delete.php?id=<?php echo $row['id']; ?>" class="text-light">Delete</a>
             </button>
         </td>
+        <td>
+            <button class="v">
+            <a href="uptade.php?id=<?php echo $row['id']; ?>" class="text-light">Update</a>
+            </button>
+        </td>
+       
     </tr>
     <?php
 }
@@ -149,6 +168,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 </div>
 </div>
 </div>
-</div>
+
 </body>
 </html>

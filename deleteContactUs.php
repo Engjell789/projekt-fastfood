@@ -1,28 +1,51 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "contact";
+class ContactManager
+{
+    private $host = "localhost";
+    private $user = "root";
+    private $password = "";
+    private $db = "contact";
+    private $connection;
 
-session_start();
+    public function __construct()
+    {
+        $this->connection = mysqli_connect($this->host, $this->user, $this->password, $this->db);
+        if ($this->connection === false) {
+            die("Deshtoi lidhja me databazën");
+        }
+    }
 
-$data = mysqli_connect($host, $user, $password, $db);
-if ($data === false) {
-    die("Deshtoi lidhja me databazën");
-}
+    public function __destruct()
+    {
+        mysqli_close($this->connection);
+    }
 
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
+    public function deleteContactMessage($id)
+    {
+        $sql = "DELETE FROM contact_us WHERE id = ?";
+        $stmt = mysqli_prepare($this->connection, $sql);
 
-    $sql = "delete from contact_us where id=$id";
-    $result = mysqli_query($data, $sql);
-    if($result){
-        header('location:dashboardcontactus.php');
-    }else{
-        echo "deshtoi";
+        mysqli_stmt_bind_param($stmt, "i", $id);
+
+        $result = mysqli_stmt_execute($stmt);
+
+        if ($result) {
+            header('location: dashboardcontactus.php');
+        } else {
+            echo "Deshtoi fshirja: " . mysqli_error($this->connection);
+        }
+
+        mysqli_stmt_close($stmt);
     }
 }
 
+session_start();
 
-    ?>
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $contactManager = new ContactManager();
+    $contactManager->deleteContactMessage($id);
+}
+?>

@@ -1,4 +1,5 @@
  <?php
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -16,8 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = isset($_POST["email"]) ? $_POST["email"] : "";
     $password = isset($_POST["password_1"]) ? $_POST["password_1"] : "";
     $confirm_password = isset($_POST["password_2"]) ? $_POST["password_2"] : "";
+    $usertype = isset($_POST["usertype"]) ? $_POST["usertype"] : "";
 
-    if (empty($username) || empty($email) || empty($password) || empty($confirm_password)) {
+
+    if (empty($username) || empty($email) || empty($password) || empty($confirm_password) || empty($usertype)) {
         echo '<script>alert("Ju lutemi, plotësoni të gjitha fushat e regjistrimit.")</script>';
     } elseif ($password != $confirm_password) {
         echo '<script>alert("Fjalëkalimet nuk përputhen.")</script>';
@@ -25,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        
 
 
-        $sql = "INSERT INTO users (username, password, email) 
-                VALUES ('$username', '$password', '$email')";
+        $sql = "INSERT INTO users (username, password, email,usertype) 
+                VALUES ('$username', '$password', '$email','$usertype')";
 
         $result = mysqli_query($data, $sql);
 
         if ($result) {
-                header('location: login.php');
+                header('location: admin.php');
         } else {
             echo "Gabim gjatë regjistrimit: " . mysqli_error($data);
         }
@@ -39,10 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 mysqli_close($data);
-?>
 
 
+    ?>
 
+
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,10 +56,10 @@ mysqli_close($data);
 </head>
 <body>
     <div class="header">
-        <h2>Register</h2>
+        <h2>ADD USER</h2>
     </div>
 
-    <form method="post" action="register.php">
+    <form method="post" action="adduser.php">
         <div class="input-group">
             <label>Username</label>
             <input type="text" name="username">
@@ -72,9 +77,13 @@ mysqli_close($data);
             <input type="password" name="password_2">
         </div>
         <div class="input-group">
-            <button type="submit" class="btn" name="register_btn">Register</button>
+            <label>User Type</label>
+            <input type="text" name="usertype">
         </div>
-        <p>Already a member? <a href="login.php">Sign in</a></p>
+        <div class="input-group">
+            <button type="submit" class="btn" name="register_btn">Add</button>
+        </div>
+        
     </form>
 </body>
 </html>

@@ -30,23 +30,24 @@
             <div class="logo"><h1><b>BLITZ</b>FOOD</h1></div>
             <ul>
                 <li><a href="userhome.php">HOME</a></li>
-                <li><a href="aboutus.html">ABOUT US</a></li>
-                <li><a href="burger.php">BURGER</a></li>
-                <li><a href="pizza.php">PIZZA</a></li>
+                <li><a href="useraboutus.php">ABOUT US</a></li>
+                <li><a href="userburger.php">BURGER</a></li>
+                <li><a href="userpizza.php">PIZZA</a></li>
                 <li><a href="usercontactus.php">CONTACT US</a></li>
+                <li><a href="usernotifications.php">NOTIFICATIONS</a></li>
+                
 
             </ul>
             <div>
-                <a href="login.php"><input class="login" type="submit" value="LOG IN" name="login"> </a>
-            </div>
             <a href="logout.php"><input class="login" id="log-out" type="submit" value="LOG OUT" name="logout"></a>
+            </div>
         </div>
     </section>
 
     <div class="text_main">
         <h1>WELCOME TO</h1> 
         <h2><b>BLITZ</b>FOOD</h2>
-        <?php echo $_SESSION["username"] ?>
+      
     </div>
 
     <div class="container">

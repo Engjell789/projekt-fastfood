@@ -1,24 +1,20 @@
-
 <?php 
 
+
 if(isset($_POST['submit'])){
-include_once 'c.php';
-$obj=new Contact();
-$res=$obj->contact_us($_POST);
+include_once 'porosiadb.php';
+$obj=new Porosia();
+$res=$obj->porosia($_POST);
 if ($res==true){
     echo "<script> alert('succesful') </script>";
 }else{
     echo "<script> alert('errorr')</script>";
 }
 
-if(!isset($_SESSION["username"]))
-{
-    header("location:login.php");
-}
+
 
 
 } ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,55 +34,42 @@ if(!isset($_SESSION["username"]))
                 <li><a href="adminpizza.php">PIZZA</a></li>
                 <li><a href="admincontactus.php">CONTACT US</a></li>
                 <li><a href="adminnotifications.php">NOTIFICATIONS</a></li>
-               
             </ul>
             <div>
-                <a href="dashboardcontactus.php"><input class="login" type="submit" value="MESSAGE" name="MESSAGE"> </a>
+                <a href="porosiadashboard.php"><input class="login" type="submit" value="POROSITE" name="MESSAGE"> </a>
             </div>
         
         </div>
     </section>
 
     <div class="container">
-    <form method="post" action="admincontactus.php"  onsubmit="return contactV()">
+    <form method="post" action="adminporosia.php"  onsubmit="return contactV()">
       
-            <h3>GET IN TOUCH</h3>
-            <input type="text" id="name" name="name" placeholder="Your Name" >
-            <input type="email" id="email" name="email" placeholder="Email" >
-            <input type="text" id="phone" name="phone" placeholder="Phone no." >
-            <textarea id="message" rows="4" name="message"  placeholder="How can we help you"></textarea>
+            <h3>BEJE POROSINE KETU</h3>
+            <input type="text" id="name" name="name" placeholder="Emri juaj" >
+            <input type="text" id="phone" name="phone" placeholder="NR Tel" >
+            <input type="text" id="lokacioni" name="lokacioni" placeholder="Lokacioni" >
+            <textarea id="porosia" rows="4" name="porosia"  placeholder="Qka deshironi te porositni"></textarea>
             <button type="submit" name="submit">Send</button>
         </form>
     </div>
     <script>
         function contactV() {
             var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
             var phone = document.getElementById('phone').value;
-            var message = document.getElementById('message').value;
+            var lokacioni = document.getElementById('lokacioni').value;
+            var porosia = document.getElementById('porosia').value;
 
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            var phoneRegex = /^\+\d+$/;
-
+      
     
 
-            if (name === "" || email === "" || phone === "" || message === "") {
+            if (name === "" || phone === ""|| Lokacioni === "" || porosia === "") {
                 alert("plotsoj te gjitha fushat");
                 return false;
             }
 
-            if (!emailRegex.test(email)) {
-                alert("vendos nje email valid");
-                return false;
-            }
-        
-            if (!phoneRegex.test(phone)) {
-                alert("vendos nje numer");
-                return false;
-            }
       
 
             return true;
         }
     </script>
-</body>

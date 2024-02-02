@@ -1,6 +1,6 @@
 <?php
 
-class UserManager
+class OrderManager
 {
     private $host = "localhost";
     private $user = "root";
@@ -21,17 +21,17 @@ class UserManager
         mysqli_close($this->connection);
     }
 
-    public function deleteUser($id)
+    public function deleteOrder($id)
     {
-        $sql = "DELETE FROM users WHERE id = ?";
+        $sql = "DELETE FROM porosia WHERE id = ?";
         $stmt = mysqli_prepare($this->connection, $sql);
-        
+
         mysqli_stmt_bind_param($stmt, "i", $id);
-        
+
         $result = mysqli_stmt_execute($stmt);
 
         if ($result) {
-            header('location: admin.php');
+            header('location: porosiadashboard.php');
         } else {
             echo "Deshtoi fshirja: " . mysqli_error($this->connection);
         }
@@ -42,11 +42,10 @@ class UserManager
 
 session_start();
 
-
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $userManager = new UserManager();
-    $userManager->deleteUser($id);
+    $orderManager = new OrderManager();
+    $orderManager->deleteOrder($id);
 }
 ?>

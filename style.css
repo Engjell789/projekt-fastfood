@@ -1,98 +1,5 @@
-* { 
-    margin: 0px; padding: 0px; 
-}
-
-
-#log-out{
-    color:red;
-}
-body {
-        font-size: 120%;
-        background: #F8F8FF;
-}
-.header {
-        width: 40%;
-        margin: 50px auto 0px;
-        color: white;
-        background: #5F9EA0;
-        text-align: center;
-        border: 1px solid #B0C4DE;
-        border-bottom: none;
-        border-radius: 10px 10px 0px 0px;
-        padding: 20px;
-}
-form, .content {
-        width: 40%;
-        margin: 0px auto;
-        padding: 20px;
-        border: 1px solid #B0C4DE;
-        background: white;
-        border-radius: 0px 0px 10px 10px;
-}
-.input-group {
-        margin: 10px 0px 10px 0px;
-}
-.input-group label {
-        display: block;
-        text-align: left;
-        margin: 3px;
-}
-.input-group input {
-        height: 30px;
-        width: 93%;
-        padding: 5px 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: 1px solid gray;
-}
-#user_type {
-        height: 40px;
-        width: 98%;
-        padding: 5px 10px;
-        background: white;
-        font-size: 16px;
-        border-radius: 5px;
-        border: 1px solid gray;
-}
-.btn {
-        padding: 10px;
-        font-size: 15px;
-        color: white;
-        background: #5F9EA0;
-        border: none;
-        border-radius: 5px;
-}
-.error {
-        width: 92%; 
-        margin: 0px auto; 
-        padding: 10px; 
-        border: 1px solid #a94442; 
-        color: #a94442; 
-        background: #f2dede; 
-        border-radius: 5px; 
-        text-align: left;
-}
-.success {
-        color: #3c763d; 
-        background: #dff0d8; 
-        border: 1px solid #3c763d;
-        margin-bottom: 20px;
-}
-.profile_info img {
-        display: inline-block; 
-        width: 50px; 
-        height: 50px; 
-        margin: 5px;
-        float: none;
-}
-.profile_info div {
-        display: inline-block; 
-        margin: 5px;
-}
-.profile_info:after {
-        content: "";
-        display: block;
-        clear: both;
+body{
+    background-color: bisque;
 }
 
 
@@ -101,7 +8,9 @@ form, .content {
 {
 
 
-
+    body{
+        background-color: bisque;
+    }
 .nav{
     width: 100%;
     display: flex;
@@ -176,20 +85,20 @@ input{
     position: absolute;
 }
 .container{
-	width: 100%;
-	height: 100vh;
+	width: auto;
+	height: auto;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 .swiper{
-	width: 30%;
-	height: fit-content;
+	width: auto;
+	height: auto;
 	margin-top: 45%;
 }
 .swiper-slide img{
-	width: 99%;
-    height: 800px;
+	width: auto;
+    height: auto;
 }
 .swiper .swiper-button-prev{
 	color: #01b5a4;
@@ -197,67 +106,7 @@ input{
 .swiper .swiper-button-next{
 	color: #01b5a4;
 }
-/**/
-main{
-    padding-top: 220px;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-     border: bisque;
-   
-}
-.login-form{
-    padding-top: 20px;
-    width: 300px;
-    height: 355px;
-    text-align: center;
-      border: solid 2px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-      background-image: url('https://media.istockphoto.com/id/1274728428/vector/light-brown-or-beige-coloured-grunge-old-vector-backgrounds-with-an-all-over-pattern-of.jpg?s=612x612&w=0&k=20&c=irHJvcG8ct7NJeYVLrxa5LINUUJBNO5YIQc8pwlvOu8=')
- 
-}
 
-h2{
-    font-size: 30px;
-    padding-top: 0;
-    padding-bottom: 5px;
-    font-style: italic;
-}
-.input
-{
-    
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-.input1
-{
-
-    padding-top: 10px;
-    padding-bottom: 25px;
-}
-
-.buton{
-    padding: 10px;
-    border-radius: 20px;
-    background-color: bisque;
-    
-}
-
-
-.menu{ 
-    color: bisque;
-}
-
-.inputL{
-    
-    padding-top: 15px;
-    padding-bottom: 10px;
-}
-.inputL2{
-    padding-top: 15px;
-    padding-bottom: 30px;
-}
 
 
 /*about us*/
