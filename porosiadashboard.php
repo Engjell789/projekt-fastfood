@@ -28,6 +28,116 @@ $result = mysqli_query($data, $sql);
     <title>Admin Only Here</title>
     <link rel="stylesheet" href="style.css">
     <style>
+            @media only screen and (min-width: 1px) and (max-width: 600px){
+body{
+    margin: 0;
+    background-color: bisque;
+}
+.nav{
+ 
+    width: 100%;
+    display: flex;
+
+    justify-content: space-around;
+    padding: 5px 0;
+    font-size: 7px;
+    border:solid 2px;
+}
+
+.nav .logo h1{
+    font-weight: 500;
+    font-family: sans-serif;
+    color: black;
+}
+.nav .logo b{
+    color: orangered;
+}
+.nav ul{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  padding: 20px;
+
+}
+.nav ul li{
+    margin-right: 50px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+/* butoni login*/
+input{
+    padding: 3px 13px;
+    cursor: pointer;
+    font-weight: 500;
+  
+   
+}
+      }
+
+#page-wrap {
+  width: 800px;
+
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+
+}
+
+.table {
+
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+
+  color: black;
+  border:solid 2px black;
+}
+
+
+
+
+
+.l {
+  background-color: #d9534f;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+.l a {
+  color: #fff;
+ 
+}
+
+.b{
+  background-color:bisque;
+  border: solid 5px black;
+
+}
+.j{
+  background-color:white;
+}
+.a{
+  font-size:30px;
+}
 #page-wrap {
   width: 800px;
 
@@ -116,9 +226,10 @@ th, td {
                         <table class="table tb tx">
                         <tr class="b">
     <td>Id</td>
-    <td>Username</td>
-    <td>Email</td>
-    <td>Phone</td>
+    <td>name</td>
+    <td>phone</td>
+    <td>porosia</td>
+
     <td>Delete</td>
 </tr>
 <?php
@@ -129,7 +240,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <td><?php echo $row['name'] ?></td>
         <td><?php echo $row['phone'] ?></td>
         <td><?php echo $row['porosia'] ?></td>
-  
+       
      
         <td>
             <button class="l">

@@ -1,229 +1,11 @@
-body{
-    background-color: bisque;
-}
-
-
-/* media query for moblie phone */
-@media only screen and (min-width: 1px) and (max-width: 600px)
-{
-
-
-    body{
-        background-color: bisque;
-    }
-.nav{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5px 0;
-    font-size: 6px;
-}
-
-.nav .logo h1{
-    font-weight: 500;
-    font-family: sans-serif;
-    color: black;
-}
-.nav .logo b{
-    color: orangered;
-}
-.nav ul{
-    display: flex;
-    list-style: none;
-}
-.nav ul li{
-    margin-right: 20px;
-}
-.nav ul li a{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    font-family: sans-serif;
-    font-size: 10px;
-}
-
-/* butoni login*/
-input{
-
-    padding: 3px 13px;
-    cursor: pointer;
-    font-weight: 500;
-  
-   
-}
 
 
 
-/*main text*/
-.text_main{
-    width: 85%;
-    position: absolute;
-    top: 20%;
-    text-align: center;
-    margin-left: 10px;
-    color: black;
-}
-.text_main h1{
-    font-size: 25px;
-    font-family: sans-serif;
-}
-.text_main h2{
-    font-size: 25px;
-    font-family: sans-serif;
-}
-.text_main b{
-    color: orangered;
-    font-family: sans-serif;
-}
-.image_main img{
-    display: block;
-    width: 60%;
-    height: 50%;
-    margin-left: 15%;
-    margin-top: 95%;
-    position: absolute;
-}
-.container{
-	width: auto;
-	height: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.swiper{
-	width: auto;
-	height: auto;
-	margin-top: 45%;
-}
-.swiper-slide img{
-	width: auto;
-    height: auto;
-}
-.swiper .swiper-button-prev{
-	color: #01b5a4;
-}
-.swiper .swiper-button-next{
-	color: #01b5a4;
-}
 
 
-
-/*about us*/
-
-.aboutus{
-    text-align: center;
-    margin-top: 20%;
-}
-.aboutus h3{
-    font-size: 7px;
-    font-family: sans-serif;
-}
-.aboutus h4{
-    font-family: sans-serif;
-    font-size: 10px;
-}
-.aboutus h4 b{
-    color: orangered;
-    font-family: sans-serif;
-}
-
-/*burger pizza*/
-
-.food_box{
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    padding: 100px 0;
-}
-.food_box .food_card{
-    width: 250px;
-    height: 300px;
-    padding-top: 40px;
-    margin-bottom: 50px;
-    margin-right: 3px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-}
-.food_box .food_card .food_image{
-    width: 155px;
-    height: 95px;
-    margin: 0 auto;
-}
-.food_box .food_card .food_image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-.food_text h4{
-    text-align: center;
-    font-size: 15px;
-}
-.food_text h5{
-    text-align: center;
-    font-size: 14px;
-}
-.food_text .food_btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    background: orange;
-    padding: 8px 10px;
-    margin: 0 80px;
-    margin-top: 6%;
- 
-}
-/*contact form*/
-.container{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-form{
-    background: white;
-    display: flex;
-    flex-direction: column;
-    padding: 2px 30px;
-    width: 68%;
-    height: 60%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-}
-form h3{
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-form input, textarea{
-    border: 0;
-    margin: 10px 30px;
-    padding: 20px;
-    outline: none;
-    background: #f5f5f5;
-    font-size: 16px;
-}
-form button{
-    padding: 15px;
-    background: #ff5361;
-    color: white;
-    font-size: 18px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    width: 150px;
-    margin: 20px auto 0;
-    border-radius: 30px;
-}
-}
 
 /* media query for ipad */
-@media only screen and (min-width: 600px) and (max-width: 1093px)
+@media only screen and (min-width: 600px) and (max-width: 1193px)
 {
 
 
@@ -310,13 +92,14 @@ input{
 	justify-content: center;
 }
 .swiper{
-	width: 30%;
-	height: fit-content;
+	width: auto;
+	height: auto;
 	margin-top: 45%;
 }
 .swiper-slide img{
-	width: 99%;
-    height: 800px;
+    margin-left: 240px;
+	width: 50%;
+    height: 400px;
 }
 .swiper .swiper-button-prev{
 	color: #01b5a4;
@@ -324,66 +107,8 @@ input{
 .swiper .swiper-button-next{
 	color: #01b5a4;
 }
-/**/
-main{
-    padding-top: 220px;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-     border: bisque;
-   
-}
-.login-form{
-    padding-top: 20px;
-    width: 380px;
-    height: 420px;
-    text-align: center;
-      border: solid 2px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-      background-image: url('https://media.istockphoto.com/id/1274728428/vector/light-brown-or-beige-coloured-grunge-old-vector-backgrounds-with-an-all-over-pattern-of.jpg?s=612x612&w=0&k=20&c=irHJvcG8ct7NJeYVLrxa5LINUUJBNO5YIQc8pwlvOu8=')
- 
-}
-
-h2{
-    font-size: 50px;
-    padding-top: 0;
-    padding-bottom: 5px;
-    font-style: italic;
-}
-.input
-{
-    
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-.input1
-{
-
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
-
-.buton{
-    padding: 10px;
-    border-radius: 15px;
-    background-color: bisque;
-    
-}
 
 
-.menu{ 
-    color: bisque;
-}
-
-.inputL{
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-.inputL2{
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
 
 
 /*about us*/
@@ -468,7 +193,7 @@ form{
     flex-direction: column;
     padding: 2px 30px;
     width: 68%;
-    height: 60%;
+    height: 80%;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
 }
@@ -500,7 +225,7 @@ form button{
 
 
 /* media query for laptop */
-@media only screen and (min-width: 1093px) and (max-width: 1630px)
+@media only screen and (min-width: 1193px) 
 {
 
 
@@ -545,13 +270,7 @@ input{
     cursor: pointer;
     font-weight: 500;
 }
-.log-out{
-        padding: 10px 20px;
-        cursor: pointer;
-        font-weight: 500;
-        color :red;
-    
-}
+
 
 
 /*main text*/
@@ -588,13 +307,14 @@ input{
 	justify-content: center;
 }
 .swiper{
-	width: 30%;
-	height: fit-content;
+	width: auto;
+	height: auto;
 	margin-top: 45%;
 }
 .swiper-slide img{
-	width: 99%;
-    height: 800px;
+	width: 60%;
+    height: 400px;
+    margin-left: 390px;
 }
 .swiper .swiper-button-prev{
 	color: #01b5a4;
@@ -602,67 +322,8 @@ input{
 .swiper .swiper-button-next{
 	color: #01b5a4;
 }
-/**/
-main{
-    padding-top: 130px;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-     border: bisque;
-   
-}
-.login-form{
-    padding-top: 20px;
-    width: 550px;
-    height: 550px;
-    text-align: center;
-      border: solid 2px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-      background-image: url('https://media.istockphoto.com/id/1274728428/vector/light-brown-or-beige-coloured-grunge-old-vector-backgrounds-with-an-all-over-pattern-of.jpg?s=612x612&w=0&k=20&c=irHJvcG8ct7NJeYVLrxa5LINUUJBNO5YIQc8pwlvOu8=')
- 
-}
-
-h2{
-    font-size: 50px;
-    padding-top: 0;
-    padding-bottom: 5px;
-    font-style: italic;
-}
-.input
-{
-    
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-.input1
-{
-   
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
 
 
-.buton{
-    padding: 10px;
-    border-radius: 15px;
-    background-color: bisque;
-    
-}
-
-
-.menu{ 
-    color: bisque;
-}
-
-.inputL{
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-.inputL2{
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
 
 
 /*about us*/
@@ -773,272 +434,4 @@ form button{
 }
 }
 
-
-/* media query for PC and large devices*/
-@media only screen and (min-width: 1093px) 
-{
-
-
-body{
-    margin: 0;
-    background-color: bisque;
-}
-.nav{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 30px 0;
-}
-
-.nav .logo h1{
-    font-weight: 500;
-    font-family: sans-serif;
-    color: black;
-}
-.nav .logo b{
-    color: orangered;
-}
-.nav ul{
-    display: flex;
-    list-style: none;
-}
-.nav ul li{
-    margin-right: 50px;
-}
-.nav ul li a{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    font-family: sans-serif;
-    font-size: 15px;
-}
-
-/* butoni login*/
-input{
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: 500;
- 
-}
-
-
-/*main text*/
-.text_main{
-    width: 100%;
-    position: absolute;
-    top: 20%;
-    text-align: center;
-    color: black;
-}
-.text_main h1{
-    font-size: 40px;
-    font-family: sans-serif;
-}
-.text_main h2{
-    font-size: 70px;
-    font-family: sans-serif;
-}
-.text_main b{
-    color: orangered;
-    font-family: sans-serif;
-}
-.image_main img{
-    display: block;
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 25%;
-}
-.container{
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.swiper{
-	width: 30%;
-	height: fit-content;
-	margin-top: 45%;
-}
-.swiper-slide img{
-	width: 99%;
-    height: 800px;
-}
-.swiper .swiper-button-prev{
-	color: #01b5a4;
-}
-.swiper .swiper-button-next{
-	color: #01b5a4;
-}
-
-/**/
-main{
-    padding-top: 130px;
-    display: flex;
-    justify-content: center;
-    align-self: center;
-     border: bisque;
-   
-}
-.login-form{
-    padding-top: 20px;
-    width: 550px;
-    height: 550px;
-    text-align: center;
-      border: solid 2px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-      background-image: url('https://media.istockphoto.com/id/1274728428/vector/light-brown-or-beige-coloured-grunge-old-vector-backgrounds-with-an-all-over-pattern-of.jpg?s=612x612&w=0&k=20&c=irHJvcG8ct7NJeYVLrxa5LINUUJBNO5YIQc8pwlvOu8=')
- 
-}
-
-h2{
-    font-size: 50px;
-    padding-top: 0;
-    padding-bottom: 5px;
-    font-style: italic;
-}
-.input
-{
-    
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-.input1
-{
-
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
-
-.buton{
-    padding: 10px;
-    border-radius: 15px;
-    background-color: bisque;
-    
-}
-
-
-.menu{ 
-    color: bisque;
-}
-
-.inputL{
-    padding-top: 20px;
-    padding-bottom: 10px;
-}
-.inputL2{
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
-
-
-/*about us*/
-
-.aboutus{
-    text-align: center;
-    margin-top: 7%;
-}
-.aboutus h3{
-    font-size: 28px;
-    font-family: sans-serif;
-}
-.aboutus h4{
-    font-family: sans-serif;
-}
-.aboutus h4 b{
-    color: orangered;
-    font-family: sans-serif;
-}
-
-/*burger pizza*/
-
-.food_box{
-    width: 50%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
-    padding: 100px 0;
-}
-.food_box .food_card{
-    width: 400px;
-    height: 450px;
-    padding-top: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-}
-.food_box .food_card .food_image{
-    width: 300px;
-    height: 250px;
-    margin: 0 auto;
-}
-.food_box .food_card .food_image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-.food_text h4{
-    text-align: center;
-    font-size: 25px;
-}
-.food_text h5{
-    text-align: center;
-    font-size: 17px;
-}
-.food_text .food_btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    background: orange;
-    padding: 8px 10px;
-    margin: 0 80px;
-    margin-top: 6%;
-}
-
-/*contact form*/
-.container{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-form{
-    background: white;
-    display: flex;
-    flex-direction: column;
-    padding: 2px 30px;
-    width: 70%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
-}
-form h3{
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-form input, textarea{
-    border: 0;
-    margin: 10px 30px;
-    padding: 20px;
-    outline: none;
-    background: #f5f5f5;
-    font-size: 16px;
-}
-form button{
-    padding: 15px;
-    background: #ff5361;
-    color: white;
-    font-size: 18px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    width: 150px;
-    margin: 20px auto 0;
-    border-radius: 30px;
-}
-}
 

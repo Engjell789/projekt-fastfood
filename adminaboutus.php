@@ -15,6 +15,69 @@ if(!isset($_SESSION["username"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fast food project</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @media only screen and (min-width: 1px) and (max-width: 600px){
+            body{
+    margin: 0;
+    background-color: bisque;
+}
+.nav{
+ 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    font-size: 7px;
+    border:solid 2px;
+}
+
+.nav .logo h1{
+    font-weight: 500;
+    font-family: sans-serif;
+    color: black;
+}
+.nav .logo b{
+    color: orangered;
+}
+.nav ul{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  padding: 20px;
+
+}
+.nav ul li{
+    margin-right: 50px;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+    .aboutus{
+    text-align: center;
+    margin-top: 15%;
+  
+}
+.aboutus h3{
+    font-size: 12px;
+    font-family: sans-serif;
+
+}
+.aboutus h4{
+    font-family: sans-serif;
+    font-size: 12px;
+   
+}
+.aboutus h4 b{
+    color: orangered;
+    font-family: sans-serif;
+}
+}
+</style>
 </head>
 <body>
     <section class="menu">

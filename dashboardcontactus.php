@@ -30,6 +30,58 @@ $result = mysqli_query($data, $sql);
     <link rel="stylesheet" href="style.css">
   
     <style>
+      @media only screen and (min-width: 1px) and (max-width: 600px){
+body{
+    margin: 0;
+    background-color: bisque;
+}
+.nav{
+ 
+    width: 100%;
+    display: flex;
+
+    justify-content: space-around;
+    padding: 5px 0;
+    font-size: 7px;
+    border:solid 2px;
+}
+
+.nav .logo h1{
+    font-weight: 500;
+    font-family: sans-serif;
+    color: black;
+}
+.nav .logo b{
+    color: orangered;
+}
+.nav ul{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  padding: 20px;
+
+}
+.nav ul li{
+    margin-right: 50px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+/* butoni login*/
+input{
+    padding: 3px 13px;
+    cursor: pointer;
+    font-weight: 500;
+  
+   
+}
+      }
+
 #page-wrap {
   width: 800px;
 
@@ -103,6 +155,9 @@ th, td {
               
                 
             </ul>
+            <div>
+            <a href="admincontactus.php"><input class="login"  type="submit" value=" CONTACT US" name="logout"></a>
+            </div>
 </div>
 </body>
 </head>

@@ -29,6 +29,48 @@ $result = mysqli_query($data, $sql);
     <link rel="stylesheet" href="style.css">
 
     <style>
+         
+             @media only screen and (min-width: 1px) and (max-width: 600px){
+            body{
+    margin: 0;
+    background-color: bisque;
+}
+.nav{
+ 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    font-size: 7px;
+    border:solid 2px;
+}
+
+.nav .logo h1{
+    font-weight: 500;
+    font-family: sans-serif;
+    color: black;
+}
+.nav .logo b{
+    color: orangered;
+}
+.nav ul{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  padding: 20px;
+
+}
+.nav ul li{
+    margin-right: 50px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+}
         body {
             font-family: 'Arial', sans-serif;
           
@@ -80,7 +122,7 @@ $result = mysqli_query($data, $sql);
             color: #fff;
         }
 
-      
+    
     </style>
 </head>
 
@@ -98,6 +140,9 @@ $result = mysqli_query($data, $sql);
                 <li><a href="usercontactus.php">CONTACT US</a></li>
                 <li><a href="usernotifications.php">NOTIFICATIONS</a></li>
             </ul>
+            <div>
+                <a href="userhome.php"><input class="login" type="submit" value="HOME" name="MESSAGE"> </a>
+            </div>
         </div>
     </section>
 

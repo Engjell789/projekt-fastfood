@@ -22,7 +22,109 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 />
+<style>@media only screen and (min-width: 1px) and (max-width: 600px){
+body{
+    margin: 0;
+    background-color: bisque;
+}
+.nav{
+ 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    font-size: 7px;
+    border:solid 2px;
+}
 
+.nav .logo h1{
+    font-weight: 500;
+    font-family: sans-serif;
+    color: black;
+}
+.nav .logo b{
+    color: orangered;
+}
+.nav ul{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+  padding: 20px;
+
+}
+.nav ul li{
+    margin-right: 50px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+/* butoni login*/
+input{
+    padding: 3px 13px;
+    cursor: pointer;
+    font-weight: 500;
+  
+   
+}
+
+
+/*main text*/
+.text_main{
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    color: black;
+    
+}
+.text_main h1{
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.text_main h2{
+    font-size: 25px;
+    font-family: sans-serif;
+}
+.text_main b{
+    color: orangered;
+    font-family: sans-serif;
+}
+.image_main img{
+    display: block;
+    width: auto;
+    height: auto;
+    margin-left: 28%;
+    margin-top: 45%;
+    
+}
+.container{
+	width: auto;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.swiper{
+	width: auto;
+	height: auto;
+	margin-top: 45%;
+}
+.swiper-slide img{
+	width: 99%;
+    height: 800px;
+}
+.swiper .swiper-button-prev{
+	color: #01b5a4;
+}
+.swiper .swiper-button-next{
+	color: #01b5a4;
+}
+}</style>
 </head>
 <body>
     <section class="menu">
